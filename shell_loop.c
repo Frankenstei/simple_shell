@@ -17,7 +17,7 @@ int hsh(info_t *info, char **av)
 	{
 		clear_info(info);
 		if (interactive(info))
-			puts_("$ ");
+			_puts("$ ");
 		_eputchar(BUF_FLUSH);
 		r = get_input(info);
 		if (r != -1)
@@ -26,7 +26,7 @@ int hsh(info_t *info, char **av)
 			if (builtin_ret == -1)
 				find_cmd(info);
 		else if (interactive(info))
-			putchar_('\n');
+			_putchar('\n');
 		free_info(info, 0);
 	}
 	write_history(info);
@@ -63,7 +63,7 @@ int find_builtin(info_t *info)
 	};
 	for (i = 0; builtintbl[i].type; i++)
 	{
-		if (strcmp_(info->argv[0], builtintbl[i].type) == 0)
+		if (_strcmp(info->argv[0], builtintbl[i].type) == 0)
 		{
 			info->line_count++;
 			built_in_ret = builtintbl[i].func(info);

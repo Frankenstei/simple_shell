@@ -130,7 +130,7 @@ char *convert_number(long int num, int base, int flags)
 	{
 		*--ptr = sign;
 	}
-	return (sign);
+	return (ptr);
 }
 
 /**
