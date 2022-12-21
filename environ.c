@@ -1,34 +1,34 @@
 #include "shell.h"
 
 /**
- * myenv_ - prints the current environment
+ * _myenv - prints the current environment
  * @info: Structure containing potential arguments
  *
  * Return: Always 0
  */
 
-int myenv_(info_t *info)
+int _myenv(info_t *info)
 {
 	print_list_str(info->env);
 	return (0);
 }
 
 /**
- * getenv_ - gets the value of an environ variable
+ * _getenv - gets the value of an environ variable
  * @info: Structure containing potential arguments
  * @name: env var name
  *
  * Return: value
  */
 
-char *getenv_(info_t *info, const char *name)
+char *_getenv(info_t *info, const char *name)
 {
 	list_t *node = info->env;
 	char *p;
 
 	while (node)
 	{
-		p = starts_with(node->str, name);
+		p = strstart_(node->str, name);
 		if (p && *p)
 		{
 			return (p);
@@ -39,13 +39,13 @@ char *getenv_(info_t *info, const char *name)
 }
 
 /**
- * mysetenv_ - Initialize a new environment variable
+ * _mysetenv - Initialize a new environment variable
  * @info: Structure containing potential arguments
  *
  * Return: Always 0
  */
 
-int mysetenv_(info_t *info)
+int _mysetenv(info_t *info)
 {
 	if (info->argc != 3)
 	{

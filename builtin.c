@@ -1,14 +1,14 @@
 #include "shell.h"
 
 /**
- * myexit_ - exits the shell
+ * _myexit - exits the shell
  * @info: structure containing potential arguments
  *
  * Return: exits with a given exit status
  * (0) if info.argv[0] != "exit"
  */
 
-int myexit_(info_t *info)
+int _myexit(info_t *info)
 {
 	int exitcheck;
 
@@ -31,13 +31,13 @@ int myexit_(info_t *info)
 }
 
 /**
- * mycd_ - changes the current directory of the process
+ * _mycd - changes the current directory of the process
  * @info: Structure containing potential arguments
  *
  * Return: Always 0
  */
 
-int mycd_(info_t *info)
+int _mycd(info_t *info)
 {
 	char *s, *dir, buffer[1024];
 	int chdir_ret;
@@ -52,7 +52,7 @@ int mycd_(info_t *info)
 				chdir((dir = _getenv(info, "PWD=")) ? dir : "/");
 		else
 			chdir_ret = chdir(dir);
-	else if (_strcmp(info->argv[1], "-") == 0)
+	else if (strcmp_(info->argv[1], "-") == 0)
 		if (!_getenv(info, "OLDPWD="))
 		{
 			puts_(s);

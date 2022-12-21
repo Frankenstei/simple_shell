@@ -11,7 +11,6 @@
 #include <limits.h>
 #include <fcntl.h>
 #include <errno.h>
-#include <string.h>
 
 /* Read and write buffers */
 #define READ_BUF_SIZE 1024
@@ -98,7 +97,7 @@ typedef struct passinfo
 
 #define INFO_INIT \
 {NULL, NULL, NULL, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, \
-0, 0, 0}
+	0, 0, 0}
 
 /**
  * struct builtin - contains a builtin string and related function

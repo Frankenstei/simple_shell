@@ -34,7 +34,7 @@ ssize_t input_buf(info_t *info, char **buf, size_t *len)
 			info->linecount_flag = 1;
 			remove_comments(*buf);
 			build_history_list(info, *buf, info->histcount++);
-			if (_strchr(*buf, ';'))
+			/*if (_strchr(*buf, ';'))*/
 			{
 				*len = r;
 				info->cmd_buf = buf;
@@ -149,7 +149,7 @@ int _getline(info_t *info, char **ptr, size_t *length)
 	if (s)
 		_strncat(new_p, buf + i, k - i);
 	else
-		_strncat(new_p, buf + i, k - i + 1);
+		_strncpy(new_p, buf + i, k - i + 1);
 	s = s + (k - i);
 	i = k;
 	p = new_p;

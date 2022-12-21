@@ -47,7 +47,7 @@ char *strdup_(const char *str)
 	}
 	for (i++; i--;)
 	{
-		ptr[i] = --*str;
+		ptr[i] = *--str;
 	}
 	return (ptr);
 }
@@ -65,7 +65,7 @@ void puts_(char *str)
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		_putchar(str[i]);
+		putchar_(str[i]);
 	}
 }
 

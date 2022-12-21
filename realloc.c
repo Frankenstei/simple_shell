@@ -1,15 +1,15 @@
 #include "shell.h"
 
 /**
- * memset_ - fills memory with constant byte
- * @mem: pointer to memory
+ * _memset - fills memory with constant byte
+ * @s: pointer to memory
  * @b: byte for filling
  * @n: amount of bytes to be filled
  *
  * Return: pointer
  */
 
-char *memset_(char *mem, char b, unsigned int n)
+char *_memset(char *s, char b, unsigned int n)
 {
 	unsigned int i;
 
@@ -21,27 +21,27 @@ char *memset_(char *mem, char b, unsigned int n)
 }
 
 /**
- * freee - frees memory
- * @memstr: string of memory
+ * ffree - frees memory
+ * @pp: string of memory
  */
 
-void freee(char **memstr)
+void ffree(char **pp)
 {
-	char **a = memstr;
+	char **a = pp;
 
-	if (!memstr)
+	if (!pp)
 	{
 		return;
 	}
-	while (*memstr)
+	while (*pp)
 	{
-		free(*memstr++);
+		free(*pp++);
 	}
 	free(a);
 }
 
 /**
- * realloc_ - reallocates block of memory
+ * _realloc - reallocates block of memory
  * @ptr: pointer to previous block
  * @old_size: bytes of old block
  * @new_size: bytes of new block
@@ -49,7 +49,7 @@ void freee(char **memstr)
  * Return: pointer to old block
  */
 
-void *realloc_(void *ptr, unsigned int old_size, unsigned int new_size)
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
 	char *p;
 
@@ -70,14 +70,7 @@ void *realloc_(void *ptr, unsigned int old_size, unsigned int new_size)
 	{
 		return (NULL);
 	}
-	if (old_size == old_size < new_size)
-	{
-		return (old_size);
-	}
-	else
-	{
-		return (new_size);
-	}
+	old_size = old_size < new_size ? old_size : new_size;
 	while (old_size--)
 	{
 		p[old_size] = ((char *)ptr)[old_size];

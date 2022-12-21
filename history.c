@@ -45,6 +45,12 @@ int write_history(info_t *info)
 	{
 		return (-1);
 	}
+	fd = open(filename, O_CREAT | O_TRUNC | O_RDWR, 0644);
+	free(filename);
+	if (fd == -1)
+	{
+		return (-1);
+	}
 	for (node = info->history; node; node = node->next)
 	{
 		_putsfd(node->str, fd);

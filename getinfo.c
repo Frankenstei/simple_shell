@@ -76,7 +76,7 @@ void free_info(info_t *info, int all)
 		{
 			free_list(&(info->alias));
 		}
-		frree(info->environ);
+		ffree(info->environ);
 		info->environ = NULL;
 		bfree((void **)info->cmd_buf);
 		if (info->readfd > 2)

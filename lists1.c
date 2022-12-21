@@ -35,7 +35,7 @@ char **list_to_strings(list_t *head)
 
 	if  (!head || !i)
 	{
-		return (null);
+		return (NULL);
 	}
 	strs = malloc(sizeof(char *) * (i + 1));
 	if (!strs)
@@ -44,7 +44,7 @@ char **list_to_strings(list_t *head)
 	}
 	for (i = 0; node; node = node->next, i++)
 	{
-		str = malloc(_strlen(node->str) + 1);
+		str = malloc(strlen_(node->str) + 1);
 		if (!str)
 		{
 			for (j = 0; j < i; j++)
@@ -101,7 +101,7 @@ list_t *node_starts_with(list_t *node, char *prefix, char c)
 
 	while (node)
 	{
-		p = starts_with(node->str, prefix);
+		p = strstart_(node->str, prefix);
 		if (p && ((c == -1) || (*p == c)))
 		{
 			return (node);

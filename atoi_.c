@@ -32,12 +32,12 @@ int is_delim(char c, char *delim)
 }
 
 /**
- * isalpha_ - checks for alphabets
+ * _isalpha - checks for alphabets
  * @c: input character
  * Return: 1 if c is alphabet, 0 otherwise
  */
 
-int isalpha_(int c)
+int _isalpha(int c)
 {
 	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
 	{
