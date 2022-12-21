@@ -2,58 +2,44 @@
 
 /**
  * strlen_ - returns string length
- * @str: string to be checked
+ * @s: string to be checked
  *
  * Return: length of string
  */
 
-int strlen_(char *str)
+int strlen_(char *s)
 {
-	int i;
+	int i = 0;
 
-	if (str == NULL)
-	{
+	if (!s)
 		return (0);
-	}
 
-	for (i = 0; str != '\0'; i++)
-	{
-		;
-	}
+	while (*s++)
+		i++;
 	return (i);
 }
 
 /**
  * strcmp_ - compares two strings
- * @str1: first string
- * @str2: second string
+ * @s1: first string
+ * @s2: second string
  *
  * Return: integer
  */
 
-int strcmp_(char *str1, char *str2)
+int strcmp_(char *s1, char *s2)
 {
-	while (*str1 && *str2)
+	while (*s1 && *s2)
 	{
-		if (*str1 != *str2)
-		{
-			return (*str1 - *str2);
-		}
-		str1++;
-		str2++;
+		if (*s1 != *s2)
+			return (*s1 - *s2);
+		s1++;
+		s2++;
 	}
-	if (*str1 == *str2)
-	{
+	if (*s1 == *s2)
 		return (0);
-	}
-	else if (*str1 < *str2)
-	{
-		return (-1);
-	}
 	else
-	{
-		return (1);
-	}
+		return (*s1 < *s2 ? -1 : 1);
 }
 
 /**
@@ -67,13 +53,9 @@ int strcmp_(char *str1, char *str2)
 char *strstart_(const char *haystack, const char *needle)
 {
 	while (*needle)
-	{
 		if (*needle++ != *haystack++)
-		{
 			return (NULL);
-		}
-		return ((char *)haystack);
-	}
+	return ((char *)haystack);
 }
 
 /**
@@ -86,17 +68,12 @@ char *strstart_(const char *haystack, const char *needle)
 
 char *strcat_(char *dest, char *src)
 {
-	int i, length;
+	char *ret = dest;
 
-	for (length = 0; dest[length] != '\0'; length++)
-	{
-		;
-	}
-
-	for (i = 0; src[i] != '\0'; i++, length++)
-	{
-		dest[length] = src[i];
-	}
-	dest[length] = '\0';
-	return (dest);
+	while (*dest)
+		dest++;
+	while (*src)
+		*dest++ = *src++;
+	*dest = *src;
+	return (ret);
 }
