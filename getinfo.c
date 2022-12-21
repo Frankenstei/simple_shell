@@ -32,7 +32,7 @@ void set_info(info_t *info, char **av)
 			info->argv = malloc(sizeof(char *) * 2);
 			if (info->argv)
 			{
-				info->argv[0] = strdup_(info->arg);
+				info->argv[0] = _strdup(info->arg);
 				info->argv[1] = NULL;
 			}
 		}
@@ -83,6 +83,6 @@ void free_info(info_t *info, int all)
 		{
 			close(info->readfd);
 		}
-		putchar_(BUF_FLUSH);
+		_putchar(BUF_FLUSH);
 	}
 }

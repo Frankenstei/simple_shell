@@ -16,15 +16,15 @@ char *get_history_file(info_t *info)
 	{
 		return (NULL);
 	}
-	buf = malloc(sizeof(char) * (strlen_(dir) + strlen_(HIST_FILE) + 2));
+	buf = malloc(sizeof(char) * (_strlen(dir) + _strlen(HIST_FILE) + 2));
 	if (!buf)
 	{
 		return (NULL);
 	}
 	buf[0] = 0;
-	strcpy_(buf, dir);
-	strcat_(buf, "/");
-	strcat_(buf, HIST_FILE);
+	_strcpy(buf, dir);
+	_strcat(buf, "/");
+	_strcat(buf, HIST_FILE);
 	return (buf);
 }
 

@@ -50,7 +50,7 @@ int strcmp_(char *s1, char *s2)
  * Return: haystack
  */
 
-char *strstart_(const char *haystack, const char *needle)
+char *starts_with(const char *haystack, const char *needle)
 {
 	while (*needle)
 		if (*needle++ != *haystack++)
@@ -59,14 +59,14 @@ char *strstart_(const char *haystack, const char *needle)
 }
 
 /**
- * strcat_ - concatenate two strings
+ * _strcat - concatenate two strings
  * @dest: destination pointer
  * @src: source pointer
  *
  * Return: pointer to destination
  */
 
-char *strcat_(char *dest, char *src)
+char *_strcat(char *dest, char *src)
 {
 	char *ret = dest;
 

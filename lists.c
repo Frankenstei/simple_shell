@@ -26,7 +26,7 @@ list_t *add_node(list_t **head, const char *str, int num)
 	new_head->num = num;
 	if (str)
 	{
-		new_head->str = strdup_(str);
+		new_head->str = _strdup(str);
 		if (!new_head->str)
 		{
 			free(new_head);
@@ -100,8 +100,8 @@ size_t print_list_str(const list_t *h)
 
 	while (h)
 	{
-		puts_(h->str ? h->str : "(nil)");
-		puts_("\n");
+		_puts(h->str ? h->str : "(nil)");
+		_puts_("\n");
 		h = h->next;
 		i++;
 	}
