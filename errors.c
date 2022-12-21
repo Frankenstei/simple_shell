@@ -52,7 +52,7 @@ int _eputchar(char c)
  * @c: character
  * @fd: file descriptor
  *
- * Return : 1 on success
+ * Return: 1 on success
  * -1 on failure
  */
 

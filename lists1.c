@@ -63,7 +63,7 @@ char **list_to_strings(list_t *head)
 }
 
 /**
- * print_lists - prints all elements
+ * print_list - prints all elements
  * @h: head pointer
  *
  * Return:list size
@@ -88,7 +88,7 @@ size_t print_list(const list_t *h)
 
 /**
  * node_starts_with - returns node whose string starts with prefix
- * node: pointer to list head
+ * @node: pointer to list head
  * @prefix: string to match
  * @c: the next character after prefix to match
  *

@@ -21,7 +21,7 @@ int _erratoi(char *s)
 		{
 			result = result * 10;
 			result = result + (s[i] - '0');
-			if (result > INT_MAX);
+			if (result > INT_MAX)
 			{
 				return (-1);
 			}
@@ -112,7 +112,7 @@ char *convert_number(long int num, int base, int flags)
 	char *ptr;
 	unsigned long n = num;
 
-	if (!(flags& CONVERT_UNSIGNED) && num < 0)
+	if (!(flags & CONVERT_UNSIGNED) && num < 0)
 	{
 		n = -num;
 		sign = '-';
@@ -121,12 +121,10 @@ char *convert_number(long int num, int base, int flags)
 		"0123456789ABCDEF";
 	ptr = &buffer[49];
 	*ptr = '\0';
-	do
-	{
+	do {
 		*--ptr = array[n % base];
 		n /= base;
-	}
-	while (n != 0);
+	} while (n != 0);
 	if (sign)
 	{
 		*--ptr = sign;
@@ -154,4 +152,3 @@ void remove_comments(char *buf)
 		}
 	}
 }
-

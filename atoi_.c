@@ -50,7 +50,7 @@ int isalpha_(int c)
 }
 
 /**
- * atoi_ - converts string to integer
+ * _atoi - converts string to integer
  * @s: string
  * Return: 0 if no numbers in string, converted number otherwise
  */

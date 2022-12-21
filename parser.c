@@ -26,7 +26,6 @@ int is_cmd(info_t *info, char *path)
 
 /**
  * dup_chars - duplicates characters
- * 
  * @pathstr: the PATH string
  * @start: start index
  * @stop: end index
@@ -72,32 +71,21 @@ char *find_path(info_t *info, char *pathstr, char *cmd)
 	if ((strlen_(cmd) > 2) && strstart_(cmd, "./"))
 	{
 		if (is_cmd(info, cmd))
-		{
 			return (cmd);
-		}
 	}
 	while (1)
 	{
 		if (!pathstr[i] || pathstr[i] == ':')
-		{
 			path = dup_chars(pathstr, curr_pos, i);
 			if (!*path)
-			{
 				strcat_(path, cmd);
-			}
 			else
-			{
 				strcat_(path, "/");
 				strcat_(path, cmd);
-			}
 			if (is_cmd(info, path))
-			{
 				return (path);
-			}
 			if (!pathstr[i])
-			{
 				break;
-			}
 			curr_pos = i;
 		}
 		i++;

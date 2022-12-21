@@ -7,7 +7,7 @@
  * Return: Always 0
  */
 
- int myhistory_(info_t *info)
+int myhistory_(info_t *info)
 {
 	print_list(info->history);
 	return  (0);
@@ -94,7 +94,7 @@ int print_alias(list_t *node)
  * _myalias - mimics the alias builtin
  * @info: Structure containing potential arguments
  *
- * Return : Always 0
+ * Return: Always 0
  */
 
 int _myalias(info_t *info)

@@ -70,7 +70,7 @@ void *realloc_(void *ptr, unsigned int old_size, unsigned int new_size)
 	{
 		return (NULL);
 	}
-	if (old_size = old_size < new_size)
+	if (old_size == old_size < new_size)
 	{
 		return (old_size);
 	}

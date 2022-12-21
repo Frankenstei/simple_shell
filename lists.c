@@ -40,7 +40,7 @@ list_t *add_node(list_t **head, const char *str, int num)
 
 /**
  * add_node_end - adds a node to the end of the list
- * head: address of pointer to head node
+ * @head: address of pointer to head node
  * @str: str field of node
  * @num: node index used by history
  *
@@ -76,7 +76,7 @@ list_t *add_node_end(list_t **head, const char *str, int num)
 	{
 		while (node->next)
 		{
-			node = node-next;
+			node = node->next;
 		}
 		node->next = next_node;
 	}
