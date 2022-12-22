@@ -1,13 +1,13 @@
 #include "shell.h"
 
 /**
- * myhistory_ - displays the history list
+ * _myhistory - displays the history list
  * @info: Structure containing potential arguments
  *
  * Return: Always 0
  */
 
-int myhistory_(info_t *info)
+int _myhistory(info_t *info)
 {
 	print_list(info->history);
 	return  (0);

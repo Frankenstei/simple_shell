@@ -1,13 +1,13 @@
 #include "shell.h"
 
 /**
- * strlen_ - returns string length
+ * _strlen - returns string length
  * @s: string to be checked
  *
  * Return: length of string
  */
 
-int strlen_(char *s)
+int _strlen(char *s)
 {
 	int i = 0;
 
@@ -20,14 +20,14 @@ int strlen_(char *s)
 }
 
 /**
- * strcmp_ - compares two strings
+ * _strcmp - compares two strings
  * @s1: first string
  * @s2: second string
  *
  * Return: integer
  */
 
-int strcmp_(char *s1, char *s2)
+int _strcmp(char *s1, char *s2)
 {
 	while (*s1 && *s2)
 	{
@@ -43,7 +43,7 @@ int strcmp_(char *s1, char *s2)
 }
 
 /**
- * strstart_ - checks that needle starts haystack
+ * starts_with - checks that needle starts haystack
  * @haystack: main string
  * @needle: sub string
  *
