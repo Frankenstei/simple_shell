@@ -1,13 +1,12 @@
 #include "shell.h"
 
 /**
- * _strcpy - copies string
- * @dest: destination
- * @src: source
+ * _strcpy - copies a string
+ * @dest: the destination
+ * @src: the source
  *
  * Return: pointer to destination
  */
-
 char *_strcpy(char *dest, char *src)
 {
 	int i = 0;
@@ -24,12 +23,11 @@ char *_strcpy(char *dest, char *src)
 }
 
 /**
- * _strdup - duplicates string
- * @str: string
+ * _strdup - duplicates a string
+ * @str: the string to duplicate
  *
- * Return: pointer to duplicate
+ * Return: pointer to the duplicated string
  */
-
 char *_strdup(const char *str)
 {
 	int length = 0;
@@ -48,12 +46,11 @@ char *_strdup(const char *str)
 }
 
 /**
- * _puts - prints input string
- * @str: string to print
+ *_puts - prints an input string
+ *@str: the string to be printed
  *
- * Return: void
+ * Return: Nothing
  */
-
 void _puts(char *str)
 {
 	int i = 0;
@@ -68,12 +65,12 @@ void _puts(char *str)
 }
 
 /**
- * _putchar - prints character to stdout
+ * _putchar - writes the character c to stdout
+ * @c: The character to print
  *
- * @c: character
- * Return: integer
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
  */
-
 int _putchar(char c)
 {
 	static int i;
@@ -85,8 +82,6 @@ int _putchar(char c)
 		i = 0;
 	}
 	if (c != BUF_FLUSH)
-	{
 		buf[i++] = c;
-	}
 	return (1);
 }
